@@ -3,11 +3,8 @@ const config = {
 }
 
 const getHomeData = () => {
-    fetch(config.host + "/api/home")
+    return fetch(config.host + "/api/home")
         .then(response => response.json())
-        .then(response => {
-            console.log(response)
-        })
 }
 
 export default getHomeData

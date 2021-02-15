@@ -12,6 +12,12 @@ export default class Home extends Component {
 
     componentDidMount() {
         getHomeData()
+            .then(response => {
+                this.setState({
+                    cities: response
+                })
+                console.log("cities", this.state.cities)
+            })
     }
 
     render() {
@@ -19,11 +25,12 @@ export default class Home extends Component {
             <div>
                 <h1>Découvrir le monde</h1>
                 {this.state.cities.length > 0 &&
-                   this.state.cities.map ((cities) => {
-                       return( 
-                           <CityCard cities={this.state} ></CityCard>
-                       )
-                    })                 }
+                    this.state.cities.map((cities) => {
+                        return (
+                            <CityCard cities={this.state} ></CityCard>
+                        )
+                    })
+                }
                 {this.state.cities.length === 0 &&
                     <p>Il n'y a rien dans l'array</p>
                 }
