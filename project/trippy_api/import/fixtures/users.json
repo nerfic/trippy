@@ -1,0 +1,42 @@
+[
+  {
+    "firstName": "Martin",
+    "surname": "Foucher",
+    "city": "paris",
+    "dob": "1976-08-19T22:00:00.000Z",
+    "username": "martin.foucher@gmail.com",
+    "description": "J'aime la pêche",
+    "thumbnail": "/img/users/user_303.jpg",
+    "password": "martinfff"
+  },
+  {
+    "firstName": "Mathilde",
+    "surname": "Caron",
+    "city": "marseille",
+    "dob": "1989-05-08T22:00:00.000Z",
+    "username": "mathilde.caron@gmail.com",
+    "description": "Le bon coin a du soucis à se faire",
+    "thumbnail": "/img/users/user_304.jpg",
+    "password": "mathildeccc"
+  },
+  {
+    "firstName": "Raymond",
+    "surname": "Garnier",
+    "city": "paris",
+    "dob": "1946-12-01T22:00:00.000Z",
+    "username": "raymond.garnier@gmail.com",
+    "description": "La famille d'abord",
+    "thumbnail": "/img/users/user_305.jpg",
+    "password": "raymondggg"
+  },
+  {
+    "firstName": "Lisa",
+    "surname": "Rodriguez",
+    "city": "marseille",
+    "dob": "1994-09-11T22:00:00.000Z",
+    "username": "lisa.rodriguez@gmail.com",
+    "description": "Carpe diem",
+    "thumbnail": "/img/users/user_306.jpg",
+    "password": "lisarrr"
+  }
+]

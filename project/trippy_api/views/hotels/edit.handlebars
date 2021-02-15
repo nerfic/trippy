@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1>Hotels - {{ action }}</h1>
+        </div>
+        <div class="col-12">
+            <label>Name</label>
+            <div class="input-group input-group-lg">
+                <input id="name" type="text" class="form-control" value="{{ name }}" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <label>Address</label>
+            <div class="input-group">
+                <input id="address" type="text" class="form-control" value="{{ address }}" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <label>Phone</label>
+            <div class="input-group">
+                <input id="phone" type="text" class="form-control" value="{{ phone }}" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <label>Country</label>
+            <div class="input-group">
+                <input id="country" type="text" class="form-control" value="{{ country }}" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <label>City</label>
+            <div class="input-group">
+                <input id="city" type="text" class="form-control" value="{{ city }}" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <button id="submit" class="btn btn-primary">
+                {{#if id}}
+                Edit
+                {{else}}
+                Save
+                {{/if}}
+            </button>
+        </div>
+    </div>
+</div>
+<script src="/js/blocks/hotels/edit.js"> </script>
