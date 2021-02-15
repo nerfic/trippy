@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import getHomeData from "../utils/Api.js"
+import CityCard from "../components/CityCard"
 
 export default class Home extends Component {
     constructor(props) {
@@ -18,8 +19,11 @@ export default class Home extends Component {
             <div>
                 <h1>Découvrir le monde</h1>
                 {this.state.cities.length > 0 &&
-                    <p>il y a quelque chose dans l'array</p>
-                }
+                   this.state.cities.map ((cities) => {
+                       return( 
+                           <CityCard cities={this.state} ></CityCard>
+                       )
+                    })                 }
                 {this.state.cities.length === 0 &&
                     <p>Il n'y a rien dans l'array</p>
                 }
