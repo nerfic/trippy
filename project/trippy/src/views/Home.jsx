@@ -6,7 +6,8 @@ export default class Home extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            cities: []
+            cities: [],
+            img: "http://localhost:3002"
         }
     }
 
@@ -14,7 +15,7 @@ export default class Home extends Component {
         getHomeData()
             .then(response => {
                 this.setState({
-                    cities: response
+                    cities: response.cities
                 })
                 console.log("cities", this.state.cities)
             })
@@ -25,9 +26,14 @@ export default class Home extends Component {
             <div>
                 <h1>Découvrir le monde</h1>
                 {this.state.cities.length > 0 &&
-                    this.state.cities.map((cities) => {
+                    this.state.cities.map((city, index) => {
                         return (
-                            <CityCard cities={this.state} ></CityCard>
+                            <>
+                                <CityCard key={index}
+                                    cities={city.name}
+                                    image={this.state.img + city.source}
+                                />
+                            </>
                         )
                     })
                 }
