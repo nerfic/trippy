@@ -1,12 +1,11 @@
-import React from'React';
-class HotelsPage extends React.Component{
+import React, { Component } from 'react'
 
-        render(){
-            return(
-                <>
-                <p>  HOTELS PAGE</p>
-                </>
-            )
-        }
+export default class HotelsPage extends Component {
+    render() {
+        return (
+            <div>
+                <p>HotelsPage</p>
+            </div>
+        )
+    }
 }
-export default HotelsPage
