@@ -4,7 +4,7 @@ export default class HotelsPage extends Component {
     render() {
         return (
             <div>
-                <p>HotelsPage</p>
+                <p>{this.props.match.params.id}</p>
             </div>
         )
     }
