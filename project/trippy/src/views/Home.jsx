@@ -25,21 +25,26 @@ export default class Home extends Component {
         return (
             <div>
                 <h1>Découvrir le monde</h1>
-                <div className="row">
-                    {this.state.cities.length > 0 &&
-                        this.state.cities.map((city, index) => {
-                            return (
-                                <>
-                                    <Link to={"hotels/" + city.slug}>
-                                        <CityCard key={index}
-                                            cities={city.name}
-                                            image={this.state.img + city.source}
-                                        />
-                                    </Link>
-                                </>
-                            )
-                        })
-                    }
+                <div className="container-fluid">
+                    <div className="row d-flex justify-content-center" >
+
+                        {this.state.cities.length > 0 &&
+                            this.state.cities.map((city, index) => {
+                                return (
+                                    
+                                        <div className="col-sm-12 col-md-6 col-lg-6 d-flex justify-content-center " >
+                                            <Link to={"hotels/" + city.slug}>
+                                                <CityCard key={index}
+                                                    cities={city.name}
+                                                    image={this.state.img + city.source}
+                                                />
+                                            </Link>
+                                        </div>
+                                )
+                            })
+                        }
+
+                    </div>
                 </div>
                 {this.state.cities.length === 0 &&
                     <p>Il n'y a rien dans l'array</p>
