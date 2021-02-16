@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { BrowserRouter, Link, Switch, Route } from 'react-router-dom'
 
 export default class HotelCard extends Component {
     render() {
@@ -9,6 +10,7 @@ export default class HotelCard extends Component {
                     e.target.src = "http://via.placeholder.com/300x200"
                 }} />
                 <div className="card-body">
+                    <Link to={this.props.link}>{this.props.name}</Link>
                     <p className="card-text">{this.props.price}€ - Stars {this.props.star}</p>
                 </div>
             </div>

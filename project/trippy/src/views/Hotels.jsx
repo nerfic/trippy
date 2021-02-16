@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import HotelCard from "../components/HotelCard"
+import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
 
 export default class Hotels extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            // params: this.props.match.params.id,
             city: "",
             coords: ""
         }
@@ -31,6 +31,8 @@ export default class Hotels extends Component {
                             this.state.city.map((hotel, index) => {
                                 return (
                                     <HotelCard
+                                        link={hotel._id}
+                                        name={hotel.name}
                                         image={"http://localhost:3000" + hotel.pictures[0]}
                                         price={hotel.price}
                                         star={hotel.stars}
@@ -38,6 +40,18 @@ export default class Hotels extends Component {
                                 )
                             })
                         }
+                        <Map center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false} style={{ height: "500px" }}>
+                            <TileLayer
+                                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                            />
+                            <Marker position={[51.505, -0.09]}>
+                                <Popup>
+                                    A pretty CSS3 popup. <br /> Easily customizable.
+                                </Popup>
+                            </Marker>
+                        </Map>
+                        <p>test</p>
                     </div>
                 </div>
                 {this.state.city.length === 0 &&
