@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import getHomeData from "../utils/Api.js"
 import CityCard from "../components/CityCard"
+import { Link } from 'react-router-dom'
 
 export default class Home extends Component {
     constructor(props) {
@@ -17,7 +18,6 @@ export default class Home extends Component {
                 this.setState({
                     cities: response.cities
                 })
-                console.log("cities", this.state.cities)
             })
     }
 
@@ -30,10 +30,12 @@ export default class Home extends Component {
                         this.state.cities.map((city, index) => {
                             return (
                                 <>
-                                    <CityCard key={index}
-                                        cities={city.name}
-                                        image={this.state.img + city.source}
-                                    />
+                                    <Link to={"hotels/" + city.slug}>
+                                        <CityCard key={index}
+                                            cities={city.name}
+                                            image={this.state.img + city.source}
+                                        />
+                                    </Link>
                                 </>
                             )
                         })
