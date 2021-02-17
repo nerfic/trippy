@@ -35,27 +35,41 @@ export default class Hotels extends Component {
         console.log("lat =", newLat)
         console.log("lon =", newLon)
         return (
-            <div className="container">
-                <div className="row">
-                    <div className="col-12 col-md-6">
+            <div >
+                <div >
+                    <div >
                         {this.state.city.length > 0 &&
                             <div>
-                                {this.state.city.map((hotel, index) => {
-                                    return (
-                                        <HotelCard
-                                            link={hotel._id}
-                                            name={hotel.name}
-                                            image={"http://localhost:3000" + hotel.pictures[0]}
-                                            price={hotel.price}
-                                            star={hotel.stars}
-                                        />
-                                    )
-                                })}
-                                <HotelMap
-                                    cityLatitude={newLat}
-                                    cityLongitude={newLon}
-                                    hotels={this.state.city}
-                                />
+
+                                <div className="container-fluid ">
+                                    <div className="row d-flex justify-content-center">
+                                        <div className="col-6  ">
+                                            <div className="container  ">
+                                                <div className="row d-flex justify-content-around">
+                                                    {this.state.city.map((hotel, index) => {
+                                                        return (
+                                                            <HotelCard
+                                                                link={hotel._id}
+                                                                name={hotel.name}
+                                                                image={"http://localhost:3000" + hotel.pictures[0]}
+                                                                price={hotel.price}
+                                                                star={hotel.stars}
+                                                            />
+                                                        )
+                                                    })}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="col-md-6 d-flex justify-content-center">
+                                            <HotelMap
+                                                cityLatitude={newLat}
+                                                cityLongitude={newLon}
+                                                hotels={this.state.city}
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         }
                     </div>
