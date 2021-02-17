@@ -8,7 +8,7 @@ export default class NavBar extends Component {
     render() {
         return (
             <BrowserRouter>
-                <nav className="navbar navbar-expand-lg navbar-dark bg-success">
+                <nav className="navbar navbar-expand-lg navbar-dark bg-success ">
                     <div className="container-fluid">
                         <Link to="/" className="navbar-brand"><i className="fas fa-utensils"></i> Trippy</Link>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
