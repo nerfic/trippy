@@ -21,6 +21,24 @@ body{
 }
 
 
+.cityCardMargin{
+  margin-bottom: 16px;
+  
+}
+
+.title{
+  font-weight: bolder;
+  margin-bottom: 16px;
+}
+.citiesName{
+  text-align: center !important;
+  text-decoration: none !important;
+  color: black;
+  font-weight: bolder ;
+}
+
+
+
 
 /* font-family: 'Montserrat', sans-serif;*/
 /* #02a64a*/

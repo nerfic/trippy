@@ -25,7 +25,7 @@ export default class Home extends Component {
         return (
             <>
             <div>
-                <h1>Découvrir le monde</h1>
+                <h1 className="title text-center">Découvrir le monde</h1>
                 <div className="container-fluid">
                     <div className="row d-flex justify-content-center" >
                         {this.state.cities.length > 0 &&
