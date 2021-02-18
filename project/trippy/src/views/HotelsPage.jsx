@@ -21,7 +21,8 @@ export default class HotelsPage extends Component {
                     original: 'https://picsum.photos/id/1018/1000/600/',
                     thumbnail: 'https://picsum.photos/id/1018/1000/600/',
                 }
-            ]
+            ],
+            newPrice: 0
         }
     }
 
@@ -33,6 +34,7 @@ export default class HotelsPage extends Component {
                     hotel: response.result,
                     commodities: response.result.commodities,
                     coords: response.result.location,
+                    newPrice: response.result.price,
                     image: response.result.pictures.map((image) => {
                         return (
                             {
@@ -44,6 +46,8 @@ export default class HotelsPage extends Component {
                 })
             })
     }
+
+    // calcultePrice = () => {}
 
     render() {
         return (
@@ -68,7 +72,9 @@ export default class HotelsPage extends Component {
                         />
                     </div>
                     <div className="col-12 col-md-6">
-                        <ReservationCard />
+                        <ReservationCard 
+                            price={this.state.hotel.price}
+                        />
                     </div>
                 </div>
             </div>
