@@ -9,6 +9,38 @@ export default class ReservationCard extends Component {
         }
     }
 
+    addAdult = () => {
+        this.setState({
+            adult: this.state.adult + 1
+        })
+    }
+
+    subAdult = () => {
+        if (this.state.adult === 1) {
+            return
+        } else {
+            this.setState({
+                adult: this.state.adult - 1
+            })
+        }
+    }
+
+    addChild = () => {
+        this.setState({
+            child: this.state.child + 1
+        })
+    }
+
+    subChild = () => {
+        if (this.state.child === 0) {
+            return
+        } else {
+            this.setState({
+                child: this.state.child - 1
+            })
+        }
+    }
+
     render() {
         return (
             <div className="card">
@@ -25,10 +57,18 @@ export default class ReservationCard extends Component {
                         </div>
                     </div>
                     <div className="row">
-                        <p className="mt-4">Adulte: <button className="btn btn-outline-danger">-</button> {this.state.adult} <button className="btn btn-outline-success">+</button></p>
+                        <p className="mt-4">Adulte: 
+                        <button className="btn btn-outline-danger" onClick={this.subAdult}>-</button> 
+                        <span className="mx-3">{this.state.adult}</span>
+                        <button className="btn btn-outline-success" onClick={this.addAdult}>+</button>
+                        </p>
                     </div>
                     <div className="row">
-                        <p className="mt-4">Enfant: <button className="btn btn-outline-danger">-</button> {this.state.child} <button className="btn btn-outline-success">+</button></p>
+                        <p className="mt-4">Enfant: 
+                        <button className="btn btn-outline-danger" onClick={this.subChild}>-</button> 
+                        <span className="mx-3">{this.state.child}</span>
+                        <button className="btn btn-outline-success" onClick={this.addChild}>+</button>
+                        </p>
                     </div>
                     <div className="row">
                         <div className="col-12">
