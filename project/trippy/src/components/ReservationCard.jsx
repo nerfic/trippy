@@ -54,6 +54,7 @@ export default class ReservationCard extends Component {
     calcultePrice = () => {
         let diffDate = Math.floor((moment(this.state.endDate) - moment(this.state.startDate))/ (60 * 60 * 24 * 1000))
         if (diffDate === 0) {
+            console.log(this.props.price)
             return this.props.price
         } else if (diffDate < 0) {
             console.log('inf a 0')
@@ -63,14 +64,6 @@ export default class ReservationCard extends Component {
         } else {
             return this.props.price * diffDate;
         }
-    }
-
-    invalidDate = () => {
-        return (
-            <>
-            <p>Date invalide</p>
-            </>
-        )
     }
 
     render() {
@@ -105,7 +98,7 @@ export default class ReservationCard extends Component {
                     </div>
                     <div className="row">
                         <div className="col-12">
-                            <button className="btn btn-success w-100">Réserver {this.calcultePrice()}0</button>
+                            <button className="btn btn-success w-100">Réserver {this.calcultePrice()}€</button>
                         </div>
                     </div>
                 </div>
