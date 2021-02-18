@@ -54,6 +54,7 @@ export default class Hotels extends Component {
                                                                 image={"http://localhost:3000" + hotel.pictures[0]}
                                                                 price={hotel.price}
                                                                 star={hotel.stars}
+                                                                phone ={hotel.phone}
                                                             />
                                                         )
                                                     })}

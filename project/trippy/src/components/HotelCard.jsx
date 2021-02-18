@@ -38,18 +38,23 @@ export default class HotelCard extends Component {
                         }} />
                     </div>
                     <div className="col-md-8">
-                        <div className="card-body text-center">
+                        <div className="card-body ">
                             <Link to={"../hotel/" + this.props.link}>{this.props.name}</Link>
                             <p className="card-text">{this.props.price}€</p>
-                            <div > <StarsRating
+                            <a href={"tel:" + this.props.phone}> {this.props.phone}</a>
+                        </div>
+                        <div className="card-footer">
+                            <StarsRating
+                                style={{ textAlign: "center" }}
                                 count={5}
                                 value={this.props.star}
                                 size={24}
                                 edit={false}
                                 color2={'#ffd700'} />
-                            </div>
+
                             {this.props.star === null &&
                                 <p>Aucune note</p>}
+
                         </div>
                     </div>
                 </div>
