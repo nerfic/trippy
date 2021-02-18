@@ -105,7 +105,7 @@ export default class ReservationCard extends Component {
                     </div>
                     <div className="row">
                         <div className="col-12">
-                            <button className="btn btn-success w-100">Réserver {this.calcultePrice()}€</button>
+                            <button className="btn btn-success w-100">Réserver {this.calcultePrice()}0</button>
                         </div>
                     </div>
                 </div>
