@@ -4,11 +4,15 @@ import HotelMarker from "./HotelMarker"
 import L from "leaflet";
 import ReactDOMServer from "react-dom/server"
 
+
+
 export default class HotelMap extends Component {
     render() {
         return (
-            <div>
-                <Map center={[this.props.cityLatitude, this.props.cityLongitude]} zoom={12} scrollWheelZoom={false} style={{ height: "36rem", width: "36rem" }}>
+            <>
+            <div className="stickyMap position-sticky" style={{ height: "35%", width: "100%" }}>
+            
+                <Map center={[this.props.cityLatitude, this.props.cityLongitude]} zoom={12} scrollWheelZoom={false} style={{ height: "50%" }}>
                     <TileLayer
                         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -34,7 +38,10 @@ export default class HotelMap extends Component {
                     })
                     }
                 </Map>
+                
             </div>
+            
+            </>
         )
     }
 }

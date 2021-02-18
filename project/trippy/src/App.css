@@ -37,6 +37,18 @@ body{
   font-weight: bolder ;
 }
 
+.stickyMap{
+  position: sticky !important;  
+  top: 30px
+}
+.plagePicture{
+  width: 100%;
+  height: 100%;
+  padding: 32px;
+}
+.card-body a {
+  text-decoration: none !important;
+}
 
 
 

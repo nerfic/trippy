@@ -60,24 +60,27 @@ export default class Hotels extends Component {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="col-md-6 d-flex justify-content-center">
+                                        <div className="col-md-6  justify-content-center   ">
                                             <HotelMap
+
                                                 cityLatitude={newLat}
                                                 cityLongitude={newLon}
                                                 hotels={this.state.city}
+
                                             />
+                                           
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                            </div>
+                                </div>
                         }
                     </div>
                 </div>
-                {this.state.city.length === 0 &&
-                    <p>Aucun hotel disponible</p>
-                }
-            </div>
+                    {this.state.city.length === 0 &&
+                        <p>Aucun hotel disponible</p>
+                    }
+                </div>
         )
     }
 }
