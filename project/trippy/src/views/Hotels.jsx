@@ -41,28 +41,26 @@ export default class Hotels extends Component {
                         {this.state.city.length > 0 &&
                             <div>
 
-                                <div className="container-fluid ">
+                                <div className="container">
                                     <div className="row d-flex justify-content-center">
-                                        <div className="col-6  ">
-                                            <div className="container  ">
-                                                <div className="row d-flex justify-content-around">
-                                                    {this.state.city.map((hotel, index) => {
-                                                        return (
-                                                            <HotelCard
-                                                                link={hotel._id}
-                                                                name={hotel.name}
-                                                                image={"http://localhost:3000" + hotel.pictures[0]}
-                                                                price={hotel.price}
-                                                                star={hotel.stars}
-                                                                phone={hotel.phone || "Aucun téléphone"}
-                                                                address={hotel.address || "Aucune adresse"}
-                                                            />
-                                                        )
-                                                    })}
-                                                </div>
+                                        <div className="col-12 col-md-6">
+                                            <div className="row d-flex justify-content-around">
+                                                {this.state.city.map((hotel, index) => {
+                                                    return (
+                                                        <HotelCard
+                                                            link={hotel._id}
+                                                            name={hotel.name}
+                                                            image={"http://localhost:3000" + hotel.pictures[0]}
+                                                            price={hotel.price}
+                                                            star={hotel.stars}
+                                                            phone={hotel.phone || "Aucun téléphone"}
+                                                            address={hotel.address || "Aucune adresse"}
+                                                        />
+                                                    )
+                                                })}
                                             </div>
                                         </div>
-                                        <div className="col-md-6  justify-content-center   ">
+                                        <div className="col-12 col-md-6 justify-content-center   ">
                                             <HotelMap
                                                 cityLatitude={newLat}
                                                 cityLongitude={newLon}
