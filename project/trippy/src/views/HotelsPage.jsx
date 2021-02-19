@@ -3,6 +3,7 @@ import HotelGallery from "../components/HotelGallery"
 import ReservationCard from "../components/ReservationCard"
 import HotelInfoCard from "../components/HotelInfoCard"
 import CommodotiesCard from "../components/CommodotiesCard"
+import RoomCard from "../components/RoomCard"
 import "react-image-gallery/styles/css/image-gallery.css";
 
 export default class HotelsPage extends Component {
@@ -22,7 +23,8 @@ export default class HotelsPage extends Component {
                     thumbnail: 'https://picsum.photos/id/1018/1000/600/',
                 }
             ],
-            newPrice: 0
+            newPrice: 0,
+            room: ""
         }
     }
 
@@ -45,9 +47,21 @@ export default class HotelsPage extends Component {
                     })
                 })
             })
+
+        fetch(`http://localhost:3002/api/hotels/${this.props.match.params.id}/rooms/`)
+            .then(response => response.json())
+            .then(response => {
+                this.setState({
+                    room: response
+                })
+            })
     }
 
-    // calcultePrice = () => {}
+    changeRoom = (price) => {
+        this.setState({
+            newPrice: price
+        })
+    }
 
     render() {
         return (
@@ -72,8 +86,13 @@ export default class HotelsPage extends Component {
                         />
                     </div>
                     <div className="col-12 col-md-6">
-                        <ReservationCard 
-                            price={this.state.hotel.price}
+                        <ReservationCard
+                            price={this.state.newPrice}
+                        />
+                        <RoomCard
+                            totalRoom={this.state.room.total}
+                            room={this.state.room.results}
+                            onClick={this.changeRoom}
                         />
                     </div>
                 </div>

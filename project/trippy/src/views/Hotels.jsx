@@ -11,7 +11,7 @@ export default class Hotels extends Component {
             coords: {
                 lat: 0,
                 lon: 0
-            }
+            },
         }
     }
 
@@ -21,7 +21,7 @@ export default class Hotels extends Component {
             .then(response => {
                 this.setState({
                     city: response.results,
-                    coords: response.center
+                    coords: response.center,
                 })
             })
 
@@ -54,7 +54,8 @@ export default class Hotels extends Component {
                                                                 image={"http://localhost:3000" + hotel.pictures[0]}
                                                                 price={hotel.price}
                                                                 star={hotel.stars}
-                                                                phone ={hotel.phone}
+                                                                phone={hotel.phone || "Aucun téléphone"}
+                                                                address={hotel.address || "Aucune adresse"}
                                                             />
                                                         )
                                                     })}
@@ -63,25 +64,22 @@ export default class Hotels extends Component {
                                         </div>
                                         <div className="col-md-6  justify-content-center   ">
                                             <HotelMap
-
                                                 cityLatitude={newLat}
                                                 cityLongitude={newLon}
                                                 hotels={this.state.city}
-
                                             />
-                                           
-                                            </div>
                                         </div>
                                     </div>
-
                                 </div>
+
+                            </div>
                         }
                     </div>
                 </div>
-                    {this.state.city.length === 0 &&
-                        <p>Aucun hotel disponible</p>
-                    }
-                </div>
+                {this.state.city.length === 0 &&
+                    <p>Aucun hotel disponible</p>
+                }
+            </div>
         )
     }
 }
